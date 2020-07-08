@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
-#!/usr/bin/env bash
 Setup Upgrade Using Command Line
 
 php bin/magento setup:upgrade
@@ -159,19 +157,19 @@ sudo php bin/magento setup:upgrade
 
 php bin/magento catalog:image:resize
 
-BASH :
+#BASH :
 
 chmod -cR 777 .
 
-FOR COPY :
+#FOR COPY :
 cp -a  pub/static/. pub/static_bkp/
 
 cp -a  pub/. /dev.imranelectronics.com.pk/pub/
 
-FOR DEPLOY
+#FOR DEPLOY
 cp -a pub/static_4_22_2020/.  pub/static/
 cp -a ../public_html/pub/media/catalog/product/. pub/media/catalog/product/
 
-DOCKER :
+#DOCKER :
 
  --name mgt-dev-72
