@@ -1,3 +1,42 @@
+
+Remove Magento crontab Using Command Line
+
+php bin/magento cron:remove
+php bin/magento module:uninstall Mageplaza_Core
+php bin/magento module:uninstall vnecoms
+php bin/magento module:enable Petshopcustom_Restfulapi
+
+php bin/magento deploy:mode:set developer
+php bin/magento indexer:reindex
+php bin/magento cache:clean
+# Magento Useful Commands:
+php bin/magento cache:flush
+php bin/magento setup:upgrade
+php -dmemory_limit=1G  bin/magento setup:di:compile
+php  -dmemory_limit=1G bin/magento setup:static-content:deploy
+sudo php bin/magento setup:upgrade
+php bin/magento catalog:image:resize
+
+#BASH Linux Commands:
+
+chmod -cR 777 .
+
+#FOR COPY :
+cp -a  pub/static/. pub/static_bkp/
+
+cp -a  pub/. /dev.imranelectronics.com.pk/pub/
+
+#FOR DEPLOY
+cp -a pub/static_4_22_2020/.  pub/static/
+cp -a ../public_html/pub/media/catalog/product/. pub/media/catalog/product/
+
+#DOCKER Commands:
+
+ --name mgt-dev-72
+
+
+
+
 #!/usr/bin/env bash
 Setup Upgrade Using Command Line
 
@@ -135,41 +174,3 @@ Use --force to rewrite an existing Magento crontab.
 To view the crontab, enter the following command as the Magento file system owner.
 
 crontab -l
-
-Remove Magento crontab Using Command Line
-
-php bin/magento cron:remove
-php bin/magento module:uninstall Mageplaza_Core
-php bin/magento module:uninstall vnecoms
-php bin/magento module:enable Petshopcustom_Restfulapi
-
-php bin/magento deploy:mode:set developer
-
-php bin/magento indexer:reindex
-
-php bin/magento cache:clean
-php bin/magento cache:flush
-
-php bin/magento setup:upgrade
-php -dmemory_limit=1G  bin/magento setup:di:compile
-php  -dmemory_limit=1G bin/magento setup:static-content:deploy
-sudo php bin/magento setup:upgrade
-
-php bin/magento catalog:image:resize
-
-#BASH :
-
-chmod -cR 777 .
-
-#FOR COPY :
-cp -a  pub/static/. pub/static_bkp/
-
-cp -a  pub/. /dev.imranelectronics.com.pk/pub/
-
-#FOR DEPLOY
-cp -a pub/static_4_22_2020/.  pub/static/
-cp -a ../public_html/pub/media/catalog/product/. pub/media/catalog/product/
-
-#DOCKER :
-
- --name mgt-dev-72
